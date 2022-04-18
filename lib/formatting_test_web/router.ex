@@ -17,7 +17,7 @@ defmodule FormattingTestWeb.Router do
   scope "/", FormattingTestWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", TestLive, :index
   end
 
   # Other scopes may use custom stacks.

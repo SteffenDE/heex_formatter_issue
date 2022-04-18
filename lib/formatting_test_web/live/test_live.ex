@@ -1,6 +1,11 @@
 defmodule FormattingTestWeb.TestLive do
   use FormattingTestWeb, :live_view
 
+  def textarea(assigns) do
+    assigns = assign(assigns, :extra_assigns, assigns_to_attributes(assigns, []))
+    ~H"<textarea {@extra_assigns}><%= render_slot(@inner_block) %></textarea>"
+  end
+
   def render(assigns) do
     ~H"""
     <div class="flex-1 flex flex-col overflow-hidden">
@@ -23,6 +28,12 @@ defmodule FormattingTestWeb.TestLive do
                 <pattern id="tenthGrid" width="10" height="10" patternUnits="userSpaceOnUse">
                   <path d="M 10 0 L 0 0 0 10" fill="none" stroke="silver" stroke-width="0.5" />
                 </pattern>
+                <.textarea
+                  id="textarea"
+                  class="hidden very-long-class-name foo-bar-baz"
+                  phx-no-break
+                  blablablablablablablasdkasdjioasjdlaksjdlaksjdlajsdl="foooooo"
+                >My content</.textarea>
               </defs>
             </svg>
           </section>

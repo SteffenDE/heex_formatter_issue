@@ -38,7 +38,7 @@ defmodule FormattingTest.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view,
        github: "phoenixframework/phoenix_live_view",
-       tag: "bba75d29911502bc24ee5d70ac31664b6973bf2f",
+       tag: "f2737eac0c4aca3cfbda4ee547a0ab68105729e9",
        override: true},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.5"},
